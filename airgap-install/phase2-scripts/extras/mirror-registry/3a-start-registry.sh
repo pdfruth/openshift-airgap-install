@@ -27,3 +27,6 @@ echo "Enabling and starting the systemd service"
 systemctl --user daemon-reload
 systemctl --user enable mirror-registry
 systemctl --user start mirror-registry
+
+echo "You may also want to configure Lingering to prevent the service shutting down when you log off"
+echo "Run 'loginctl enable-linger <USER>'  where <USER> is your userid"
