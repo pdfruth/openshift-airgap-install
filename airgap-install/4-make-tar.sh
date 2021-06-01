@@ -14,7 +14,7 @@ cp openshift-client-linux-${OCP_RELEASE}.tar.gz ${WORKDIR}
 cp openshift-install-linux-${OCP_RELEASE}.tar.gz ${WORKDIR}
 cp dry-run.out ${WORKDIR}
 cp -a phase2-scripts/* ${WORKDIR}
-cp -a portable-media ${WORKDIR}
+cp -a ${REMOVABLE_MEDIA_PATH} ${WORKDIR}
 
 echo "Making a tar ball"
 tar -czf airgap-${OCP_RELEASE}-${ARCHITECTURE}.tgz -C ${WORKDIR} .
