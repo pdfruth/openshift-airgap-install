@@ -20,7 +20,7 @@ Type=forking
 PIDFile=/%t/%n-pid
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
 EOF
 
 echo "Enabling and starting the systemd service"
