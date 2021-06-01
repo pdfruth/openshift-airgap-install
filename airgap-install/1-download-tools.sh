@@ -17,8 +17,8 @@ wget https://mirror.openshift.com/pub/openshift-v4/${ARCHITECTURE}/clients/ocp/$
 tar -xvzf openshift-client-linux-${OCP_RELEASE}.tar.gz
 #tar -xvzf openshift-install-linux-${OCP_RELEASE}.tar.gz
 
-REGISTRY_IMAGE_NAME_SHORT=$(echo ${REGISTRY_IMAGE_NAME} | sed "s/ibmcom\///g")
+REGISTRY_IMAGE_NAME_SHORT=$(echo ${REGISTRY_IMAGE_NAME} | sed "s/docker.io\/ibmcom\///g")
 podman pull ${REGISTRY_IMAGE_NAME}
 podman tag ${REGISTRY_IMAGE_NAME} ${REGISTRY_IMAGE_NAME_SHORT}
 podman save ${REGISTRY_IMAGE_NAME_SHORT} | gzip > registry.tar.gz
-cp registry.tar.gz phase2-scripts/extras
+cp registry.tar.gz phase2-scripts/extras/mirror-registry
